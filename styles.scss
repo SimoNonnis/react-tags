@@ -1,0 +1,111 @@
+.reactTags {
+  position: relative;
+  padding: 6px 0 0 6px;
+  border: 1px solid #979797;
+  border-radius: 1px;
+  margin-bottom: 1em;
+  cursor: text; /* clicking anywhere will focus the input */
+}
+
+.reactTags.isFocused {
+  border-color: #b1b1b1;
+}
+
+.reactTagsSelected {
+  display: inline;
+}
+
+.reactTagsSelectedTag {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0 6px 6px 0;
+  padding: 6px 8px;
+  border: none;
+  color: #fff;
+  text-transform: capitalize;
+  border-radius: 2px;
+  background: #27a42c;
+  cursor: pointer;
+}
+
+.reactTagsSelectedTag:after {
+  content: '\2715';
+  color: #fff;
+  margin-left: 8px;
+  font-size: .8em;
+}
+
+.reactTagsSearch {
+  display: inline-block;
+  padding: 7px 2px;
+  margin-bottom: 6px;
+  max-width: 100%; /* prevent autoresize overflowing the container */
+}
+
+@media screen and (min-width: 30em) {
+  .reactTagsSearch {
+    position: relative; /* this will become the offsetParent for suggestions */
+  }
+}
+
+.reactTagsSearchInput input {
+  max-width: 100%; /* prevent autoresize overflowing the container */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+.reactTagsSearchInput::-ms-clear {
+  display: none;
+}
+
+.reactTagsSuggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 30em) {
+
+  .reactTagsSuggestions {
+    width: 240px;
+  }
+
+}
+
+.reactTagsSuggestions ul {
+  margin: 4px -1px;
+  padding: 0;
+  list-style: none;
+  background: white;
+  border: 1px solid #d1d1d1;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+}
+
+.reactTagsSuggestions li {
+  border-bottom: 1px solid #ddd;
+  padding: 6px 8px;
+}
+
+.reactTagsSuggestions li mark {
+  text-decoration: underline;
+  background: none;
+  font-weight: 600;
+}
+
+.reactTagsSuggestions li:hover {
+  cursor: pointer;
+  background: #eee;
+}
+
+.suggestionIsActive {
+  background: #b7cfe0;
+}
+
+.suggestionIsActiveIsDisabled {
+  opacity: .5;
+  cursor: auto;
+}
